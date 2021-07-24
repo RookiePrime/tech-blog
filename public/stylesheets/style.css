@@ -1,4 +1,153 @@
-h1 {
+/* General and setup styling begins here */
+
+body {
+   margin: 0;
+   padding: 0;
+   background-color: goldenrod;
+   font-family: Arial, Helvetica, sans-serif;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+/* General and setup styling ends here */
+
+/* Navbar styling begins here */
+
+nav {
+    background-color: purple;
+    color: goldenrod;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+nav div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.links-box {
+    margin-left: 20px;
+}
+
+.logo-box {
+    align-items: flex-end;
+}
+
+.logo-box h4 {
+    font-size: 24px;
+    margin: 15px;
+}
+
+nav a {
+    margin: 10px;
+    color: goldenrod;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav button {
+    margin: 10px;
+    padding: 0;
+    color: goldenrod;
+    font-weight: bold;
+    text-decoration: none;
+    background: none;
+    border: none;
+    font-size: 16px;
+}
+
+nav a:hover,
+nav a:focus,
+nav button:hover,
+nav button:focus {
+    color: gold;
+}
+
+nav h1 {
     font-size: 58px;
     font-family:Arial, Helvetica, sans-serif;
+    background-color: goldenrod;
+    color: purple;
+    display: inline;
+    margin: 10px 20px;
+    padding: 3px 25px;
+}
+
+/* Navbar styling ends here */
+
+/* Body styling begins here */
+
+section {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+section div {
+    background-color: purple;
+    color: goldenrod;
+}
+
+h2 {
+    margin: 0;
+}
+
+form {
+    padding: 20px;
+    width: 300px;
+}
+
+form div {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+form button {
+    background-color: goldenrod;
+    color: purple;
+    padding: 5px 15px;
+    font-weight: bold;
+    border-style: none;
+}
+
+form button:hover,
+form button:focus {
+    background-color: gold;
+}
+
+form input[type=text] {
+    width: 130px;
+}
+
+/* Body styling ends here */
+
+
+/* Media Queries Begin Here */
+
+@media screen and (max-width: 590px) {
+
+    nav {
+        align-items: center;
+    }
+
+    nav div {
+        margin-left: 0;
+    }
+
+    nav h1 {
+        font-size: 40px;
+    }
+
+    section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form input[type=text] {
+        width: 70%;
+    }
 }

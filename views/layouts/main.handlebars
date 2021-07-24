@@ -8,6 +8,27 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
+    <nav>
+        <div class="links-box">
+            <a href="/">Home</a>
+            <a href="/">Dashboard</a>
+            {{#unless loggedIn}}
+            <a href="/login">Login</a>
+            {{/unless}}
+            {{#if loggedIn}}
+            <button id="logout">Logout</button>
+            {{/if}}
+        </div>
+        <div class="logo-box">
+            <h1>The Tech Blog</h1>
+            {{#if loggedIn}}
+            <h4>Hello, {{username}}!</h4>
+            {{/if}}
+        </div>
+    </nav>
     {{{ body }}}
+    {{#if loggedIn}}
+    <script src="./javascript/logout.js"></script>
+    {{/if}}
 </body>
 </html>

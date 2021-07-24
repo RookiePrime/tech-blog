@@ -1,1 +1,16 @@
-<h1>It's a tech blog!</h1>
+<section>
+    {{#if loggedIn}}
+    <p>Hello, {{username}}</p>
+    {{/if}}
+    {{#each posts as |post|}}
+    <div class="title">
+        <h3>{{post.title}}</h3>
+    </div>
+    <div class="content">
+        <p>{{post.post_content}}</p>
+    </div>
+    <div class="details">
+        <p>created by {{post.username}} on {{post.created_at}}</p>
+    </div>
+    {{/each}}
+</section>
