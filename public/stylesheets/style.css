@@ -125,6 +125,30 @@ form input[type=text] {
 
 /* Body styling ends here */
 
+/* Post styling begins here */
+
+article {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Post styling ends here */
+
+/* Dashboard styling begins here */
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+.dashboard h2 {
+    color: purple;
+    font-weight: bold;
+}
+
+/* Dashboard styling ends here */
 
 /* Media Queries Begin Here */
 
