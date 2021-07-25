@@ -1,5 +1,6 @@
 async function formPostHandler(e) {
     e.preventDefault();
+    console.log('hey');
 
     const title = document.querySelector('#post-title').value.trim();
     const post_content = document.querySelector('#post-content').value.trim();

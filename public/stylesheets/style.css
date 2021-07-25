@@ -83,12 +83,9 @@ nav h1 {
 section {
     margin: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-}
-
-section div {
-    background-color: purple;
-    color: goldenrod;
+    align-items: center;
 }
 
 h2 {
@@ -119,20 +116,80 @@ form button:focus {
     background-color: gold;
 }
 
-form input[type=text] {
-    width: 130px;
+form input[type=text],
+form textarea {
+    width: 100%;
+}
+
+form textarea {
+    height: 100px;
+    resize: none;
 }
 
 /* Body styling ends here */
 
-/* Post styling begins here */
+/* New Post Form styling begins here */
 
-article {
+.new-post-form div {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    background-color: purple;
+    color: goldenrod;
+}
+
+/* New Post Form styling ends here */
+
+/* Post styling begins here */
+
+.post {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 400px;
+}
+
+.post .title {
+    padding-left: 10px;
+    margin: 0;
+    background-color: purple;
+    color: goldenrod;
+}
+
+.post .content,
+.post .details {
+    background-color: gold;
+    color: purple;
+    padding: 10px;
+}
+
+.post p {
+    margin: 0;
+}
+
+.post .details {
+    font-size: 10px;
 }
 
 /* Post styling ends here */
+
+/* Comment styling begins here */
+
+.comment {
+    width: 370px;
+    padding: 10px;
+}
+
+.comment p {
+    margin: 0;
+}
+
+.comment .details {
+    font-size: 10px;
+    margin-top: 7px;
+}
+
+/* Comment styling ends here */
 
 /* Dashboard styling begins here */
 
@@ -141,6 +198,17 @@ article {
     flex-direction: column;
     justify-content: center;
     align-items: center; 
+    color: purple;
+}
+
+.dashboard a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dashboard a:hover,
+.dashboard a:focus {
+    color: palevioletred;
 }
 
 .dashboard h2 {
@@ -148,7 +216,29 @@ article {
     font-weight: bold;
 }
 
+.dashboard ol {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+.edit-link {
+    margin-left: 20px;
+    margin-top: 0;
+    font-size: 12px;
+}
+
 /* Dashboard styling ends here */
+
+/* Edit page style begins here */
+
+.edit-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Edit page style ends here */
 
 /* Media Queries Begin Here */
 

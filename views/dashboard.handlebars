@@ -1,19 +1,5 @@
 <section class="dashboard">
-    <h2>Create new Post</h2>
-
-    <form class="new-post-form">
-        <div>
-            <label for="post-title">Title</label>
-            <input type="text" id="post-title" name="post-title" />
-        </div>
-        <div>
-            <label for="post-content">Content</label>
-            <input type="text" id="post-content" name="post-content" />
-        </div>
-        <div>
-            <button type="submit">Create</button>
-        </div>
-    </form>
+    <p>Have something to say about tech? <a href="/dashboard/create-post">Click here!</a></p>
 </section>
 {{#if posts.length}}
 <section class="dashboard">
@@ -22,9 +8,9 @@
         {{#each posts as |post|}}
         <li>
             {{> post-info post}}
+            <a href="dashboard/edit/{{id}}" class="edit-link">Edit or Delete Post</a>
         </li>
         {{/each}}
     </ol>
 </section>
 {{/if}}
-<script src="./javascript/add-post.js"></script>

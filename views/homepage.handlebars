@@ -1,7 +1,4 @@
 <section>
-    {{#if loggedIn}}
-    <p>Hello, {{username}}</p>
-    {{/if}}
     {{#each posts as |post|}}
     {{> post-info post}}
     {{/each}}
