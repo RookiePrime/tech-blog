@@ -1,4 +1,18 @@
 <section>
 {{> post-info post }}
+
+{{#if loggedIn}}
+<form class="comment-form">
+    <h2 class="comments-top">Have some thoughts? Leave a comment!</h3>
+    <div>
+        <textarea name="comment-body"></textarea>
+    </div>
+    <div>
+        <button type="submit">add comment</button>
+    </div>
+</form>
+{{/if}}
+
 {{> comments post.comments }}
 </section>
+<script src="/javascript/add-comment.js"></script>

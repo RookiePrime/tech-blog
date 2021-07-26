@@ -6,7 +6,6 @@
             <p>{{post_content}}</p>
         </div>
         <div class="details">
-            <p>created by {{user.username}} on {{created_at}}</p>
-            <a href="/post/{{id}}">{{comments.length}} comments</a>
+            <p>created by {{user.username}} on {{format_date created_at}}</p>
         </div>
     </article>

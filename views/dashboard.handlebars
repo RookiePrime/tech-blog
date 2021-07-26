@@ -7,8 +7,9 @@
     <ol>
         {{#each posts as |post|}}
         <li>
+            <div onclick="location.href='dashboard/edit/{{id}}'">
             {{> post-info post}}
-            <a href="dashboard/edit/{{id}}" class="edit-link">Edit or Delete Post</a>
+            </div>
         </li>
         {{/each}}
     </ol>

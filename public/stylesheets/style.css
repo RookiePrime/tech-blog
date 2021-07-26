@@ -126,6 +126,14 @@ form textarea {
     resize: none;
 }
 
+.login-form,
+.signup-form {
+    background-color: purple;
+    color: goldenrod;
+    margin-top: 10px;
+    padding: 5px;
+}
+
 /* Body styling ends here */
 
 /* New Post Form styling begins here */
@@ -169,6 +177,8 @@ form textarea {
 
 .post .details {
     font-size: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
 /* Post styling ends here */
@@ -178,6 +188,8 @@ form textarea {
 .comment {
     width: 370px;
     padding: 10px;
+    background-color: gold;
+    margin-bottom: 7px;
 }
 
 .comment p {
@@ -187,6 +199,26 @@ form textarea {
 .comment .details {
     font-size: 10px;
     margin-top: 7px;
+}
+
+.comment-form {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: gold;
+    margin: 15px;
+}
+
+.comment-form div {
+    padding: 10px 0 0 0;
+    width: 100%;
+}
+
+.comments-top {
+    color: purple;
+    font-size: 16px;
 }
 
 /* Comment styling ends here */
@@ -236,32 +268,47 @@ form textarea {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 20px;
+}
+
+.edit-page h2 {
+    color: purple;
+}
+
+.edit-page button {
+    background-color: purple;
+    color: goldenrod;
+}
+
+.edit-page button:hover,
+.edit-page button:focus {
+    background-color:palevioletred;
+    color: gold;
 }
 
 /* Edit page style ends here */
 
 /* Media Queries Begin Here */
 
-@media screen and (max-width: 590px) {
-
+@media screen and (max-width: 760px) {
     nav {
         align-items: center;
     }
-
+    
     nav div {
         margin-left: 0;
     }
-
+    
     nav h1 {
         font-size: 40px;
     }
-
+    
     section {
         flex-direction: column;
         align-items: center;
     }
-
-    form input[type=text] {
-        width: 70%;
+    .logo-box {
+        flex-direction: column;
+        align-items: center;
     }
 }

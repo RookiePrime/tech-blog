@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
+const withAuth = require('../utils/auth');
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     Post.findAll({
         where: {
             user_id: req.session.user_id
@@ -30,7 +31,7 @@ router.get('/', (req, res) => {
     })
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            res.render('dashboard', { posts, loggedIn: true, username: req.session.username });
+            res.render('dashboard', { posts, loggedIn: req.session.loggedIn, username: req.session.username });
         })
         .catch(err => {
             console.log(err);
@@ -38,15 +39,15 @@ router.get('/', (req, res) => {
         });
 });
 
-router.get('/create-post', (req, res) => {
+router.get('/create-post', withAuth, (req, res) => {
     if (!req.session.loggedIn) {
         res.redirect('/login');
         return;
     }
-    res.render('createPost', { loggedIn: true, username: req.session.username });
+    res.render('createPost', { loggedIn: req.session.loggedIn, username: req.session.username });
 });
 
-router.get('/edit/:id', (req, res) => {
+router.get('/edit/:id', withAuth, (req, res) => {
     Post.findOne({
         where: {
             id: req.params.id
@@ -79,7 +80,7 @@ router.get('/edit/:id', (req, res) => {
             }
             const post = dbPostData.get({ plain: true });
 
-            res.render('edit-post', { post, loggedIn: true, username: req.session.username});
+            res.render('edit-post', { post, loggedIn: req.session.loggedIn, username: req.session.username});
         })
         .catch(err => {
             console.log(err);

@@ -1,5 +1,7 @@
 <section>
     {{#each posts as |post|}}
-    {{> post-info post}}
+    <div onclick="location.href='/post/{{post.id}}'">
+    {{> simple-post post}}
+    </div>
     {{/each}}
 </section>
