@@ -3,10 +3,9 @@ async function editFormHandler(e) {
 
     const title = document.querySelector('input[name="post-title"]').value.trim();
     const post_content = document.querySelector('textarea[name="post-content"]').value.trim();
-
-    const postRef = document.querySelector('form div a').getAttribute('href');
-    const postId = postRef.slice(postRef.lastIndexOf('/') + 1);
-
+    const postRef = document.querySelector('.post').getAttribute('id');
+    const postId = postRef.slice(postRef.lastIndexOf('-') + 1);
+    
     if (title && post_content) {
         const response = await fetch(`/api/posts/${postId}`, {
             method: 'put',
@@ -18,7 +17,7 @@ async function editFormHandler(e) {
                 'Content-Type': 'application/json'
             }
         });
-    
+        
         if (response.ok) {
             document.location.replace('/dashboard');
         } else {
